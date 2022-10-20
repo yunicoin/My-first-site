@@ -1,0 +1,11 @@
+<li1><a href="\bookshell">Вернуться на главную</a></li1>
+{% if books %}
+<h1>Список открытой литературы</h1>
+    <ul>
+        {% for book in books %}
+        <li><a href="{% url 'books:book_info' book.id %}">{{book.name}}. {{book.athor}}</a></li>
+        {% endfor %}
+    </ul>
+{% else %}
+<p>No books</p>
+{% endif %}

@@ -1,0 +1,6 @@
+<li1><a href="\bookshell">Вернуться на главную</a></li>
+    <h1>Творите!</h1>
+<form method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Отправить">
+</form>
