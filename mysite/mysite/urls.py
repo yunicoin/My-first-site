@@ -8,4 +8,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('mirror/', include('django.contrib.auth.urls'), name='login'),
     path('mirror/', include('userss.urls'))
-],
+]
