@@ -1,4 +1,4 @@
-{% block content %}
+
 {% if user.is_authenticated %}
 <p><a href="\mirror/logout">Выйти из аккаунта</a> ({{ user }})</p>
 {% else %}
@@ -11,6 +11,6 @@
 {% if user.is_authenticated %}
 <li><a href="book/make">Написать книгу</a></li>
 {% endif %}
-
-{% endblock content %
-}
+{% if perms.auth.view_user %}
+<li><a href="\mirror/bliks/">Список пользователей</a></li>
+{% endif %}

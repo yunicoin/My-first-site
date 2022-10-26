@@ -1,0 +1,11 @@
+<li1><a href="\bookshell">Вернуться на главную</a></li1>
+{% if user %}
+<h1>Список пользователей</h1>
+    <ul>
+        {% for user in object_list %}
+        <li>{{user}}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+<p>No books</p>
+{% endif %}

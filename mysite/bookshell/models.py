@@ -11,8 +11,6 @@ class Book(models.Model):
         super().__init__(*args, **kwargs)
         if self.accept is None:
             self.accept=False
-        if self.date is None:
-            self.date = datetime.date
     def __str__(self):
         return f"{str(self.name)}. {str(self.athor)}"
     def get_absolute_url(self):
