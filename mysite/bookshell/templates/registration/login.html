@@ -1,0 +1,7 @@
+<li1><a href="\bookshell">Вернуться на главную</a></li1>
+    <h1>Войтдите в аккаунт</h1>
+<form method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Войти</button>
+</form>
+<li1><a href="\mirror/reg">Создать аккаунт</a></li1>

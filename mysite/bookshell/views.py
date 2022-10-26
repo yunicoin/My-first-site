@@ -1,3 +1,4 @@
+from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.shortcuts import render, get_object_or_404
 from django.views.generic.edit import CreateView
 
@@ -18,7 +19,8 @@ def list_book(request):
             BL.append(i)
     return render(request, 'index.html', {'books':BL})
 
-class BookMake(CreateView):
+class BookMake(PermissionRequiredMixin, CreateView):
+    permission_required = 'book.add_book'
     model = Book
     fields = ['name', 'athor', 'date', 'text']
     template_name = 'Book_form.html'

@@ -1,5 +1,16 @@
-<li1><a href="\admin">Авторизация</a></li1>
+{% block content %}
+{% if user.is_authenticated %}
+<p><a href="\mirror/logout">Выйти из аккаунта</a> ({{ user }})</p>
+{% else %}
+<p><a href="\mirror/login">Авторизация</a></p>
+{% endif %}
 <h1>BookShell - интернет библиотека</h1>
 <h3>Здесь можно читать и писать!</h3>
+
 <li><a href="list">Список книг</a></li>
+{% if user.is_authenticated %}
 <li><a href="book/make">Написать книгу</a></li>
+{% endif %}
+
+{% endblock content %
+}
